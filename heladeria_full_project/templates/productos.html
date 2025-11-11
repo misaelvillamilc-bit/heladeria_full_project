@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Productos</h1>
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Crear</button></form>
+  <ul>{% for p in productos %}<li>{{ p.nombre }} - {{ p.precio_publico }}</li>{% endfor %}</ul>
+{% endblock %}

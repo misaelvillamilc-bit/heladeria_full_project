@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Ingredientes</h1>
+  <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Crear</button></form>
+  <ul>{% for i in ingredientes %}<li>{{ i.nombre }} - {{ i.inventario }}</li>{% endfor %}</ul>
+{% endblock %}
